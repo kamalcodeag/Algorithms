@@ -6,52 +6,84 @@ namespace Swap
     {
         static void Main(string[] args)
         {
-            string a = Console.ReadLine(); //ab
-            string b = Console.ReadLine(); //ba //result TRUE
-            char temp1 = ' ';
-            char temp2 = ' ';
-            bool isDifferent = false;
-            byte differenceCount = 0;
-            bool isSwap = false;
+            Console.WriteLine(BuddyStrings("acccccb", "bccccca").ToString());
+        }
 
-            //abcf //ab
-            //cbaa //ba
+        public static bool BuddyStrings(string a, string b)
+        {
+            bool isBuddy = false;
+            bool hasInnerDifference = false;
+            int externalDifferenceCount = 0;
+            char firstTemp = ' ';
+            char secondTemp = ' ';
+            bool hasCopiedLetter = false;
+            char copiedLetter = ' ';
 
-            if (a.Length == b.Length)
+            if (a.Length == b.Length && a.Length > 1 && b.Length > 1)
             {
                 for (int i = 0; i < a.Length; i++)
                 {
-                    if (a[i] != b[i] && !isDifferent)
+                    if (a[i] != b[i])
                     {
-                        temp1 = a[i];
-                        temp2 = b[i];
-                        differenceCount++;
-                        isDifferent = true;
-                        isSwap = false;
+                        externalDifferenceCount++;
+
+                        if (externalDifferenceCount == 1)
+                        {
+                            firstTemp = a[i];
+                            secondTemp = b[i];
+                        }
                     }
-                    else if (a[i] != b[i] && isDifferent)
-                        differenceCount++;
 
-
-                    if (a[i] == b[i])
-                        isSwap = true;
-
-                    if (differenceCount == 2 && a[i] != temp2 && b[i] != temp1)
+                    if (externalDifferenceCount == 2)
                     {
-                        isSwap = false;
-                        break;
+                        if (a[i] == secondTemp && b[i] == firstTemp)
+                        {
+                            isBuddy = true;
+                        }
                     }
-                    else if (differenceCount == 2 && a[i] == temp2 && b[i] == temp1)
-                        isSwap = true;
+
+                    if (externalDifferenceCount > 2)
+                    {
+                        isBuddy = false;
+                    }
+
+                    if (i != a.Length - 1)
+                    {
+                        if (a[i] != a[i + 1])
+                        {
+                            hasInnerDifference = true;
+                        }
+                    }
+
+                    copiedLetter = a[i];
+
+                    for (int j = i + 1; j < a.Length; j++)
+                    {
+                        if (a[j] == copiedLetter)
+                        {
+                            hasCopiedLetter = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (externalDifferenceCount == 0)
+                {
+                    if (!hasInnerDifference)
+                    {
+                        isBuddy = true;
+                    }
+                    else
+                    {
+                        if (hasCopiedLetter)
+                        {
+                            isBuddy = true;
+                        }
+                    }
                 }
             }
-            else
-            {
-                Console.WriteLine("Two values must be in same length");
-                return;
-            }
 
-            Console.WriteLine(isSwap.ToString());
+            return isBuddy;
         }
     }
 }

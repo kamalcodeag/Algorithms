@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsecutiveOnes", "Consecut
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OccurenceOfZero", "OccurenceOfZero\OccurenceOfZero.csproj", "{54561A71-FFA8-499B-B3E1-7F4548C3E080}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LengthOfLongestSubstring", "LengthOfLongestSubstring\LengthOfLongestSubstring.csproj", "{4C20FA85-BA8B-42E3-BEF7-B5A409F65306}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LengthOfLongestSubstring", "LengthOfLongestSubstring\LengthOfLongestSubstring.csproj", "{4C20FA85-BA8B-42E3-BEF7-B5A409F65306}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestValidParentheses", "LongestValidParentheses\LongestValidParentheses.csproj", "{AE91FC2F-9956-458D-9899-FC7D6653EBE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{4C20FA85-BA8B-42E3-BEF7-B5A409F65306}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C20FA85-BA8B-42E3-BEF7-B5A409F65306}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C20FA85-BA8B-42E3-BEF7-B5A409F65306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE91FC2F-9956-458D-9899-FC7D6653EBE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE91FC2F-9956-458D-9899-FC7D6653EBE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE91FC2F-9956-458D-9899-FC7D6653EBE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE91FC2F-9956-458D-9899-FC7D6653EBE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
