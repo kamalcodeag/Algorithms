@@ -6,27 +6,34 @@ namespace ConsecutiveOnes
     {
         static void Main(string[] args)
         {
-            string[] binary = Console.ReadLine().Split(',');
+            int[] numbers = { 0, 1, 1, 0, 1, 0, 1, 1, 1 };
+            Console.WriteLine(FindMaxConsecutiveOnes(numbers).ToString());
+        }
+
+        public static int FindMaxConsecutiveOnes(int[] nums)
+        {
             int maxSum = 0;
             int tempSum = 0;
 
-            for (int i = 0; i < binary.Length; i++)
+            for (int i = 0; i < nums.Length; i++)
             {
-                if (binary[i] == "1")
-                    tempSum += Convert.ToInt32(binary[i]);
-                else if(binary[i] == "0")
-                    tempSum = 0;
-                else
+                if (nums[i] == 1)
                 {
-                    Console.WriteLine("The value must contain only '0' and '1'.");
-                    return;
+                    tempSum += nums[i];
+                }
+
+                if (nums[i] == 0)
+                {
+                    tempSum = 0;
                 }
 
                 if (maxSum < tempSum)
+                {
                     maxSum = tempSum;
+                }
             }
 
-            Console.WriteLine(maxSum.ToString());
+            return maxSum;
         }
     }
 }
